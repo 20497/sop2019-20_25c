@@ -7,10 +7,8 @@ int main(){
 	for(i=0; i<100; i++){
 		pid_t pid = fork();
 		if(pid!=0){
-			goto czekaj;
+			sleep(10);
+			printf("%d ", getpid());
 		}
 	}
-czekaj:
-	sleep(10);
-	printf("%d ", getpid());
 }

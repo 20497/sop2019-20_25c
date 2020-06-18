@@ -2,10 +2,8 @@
 #include <stdlib.h>
 
 int fib(int indeks){
-	if(indeks==0)
-		return 0;
-	if(indeks==1)
-		return 1;
+	if(indeks==0 || indeks==1)
+		return indeks;
 	
 	return fib(indeks-1) + fib(indeks-2);
 }

@@ -11,10 +11,12 @@ int main(){
 		if(pidD!=0){
 			//Proces B
 			pid_t pidE = fork();
-			goto czekaj;
+			printf("%d ", getpid());
+			sleep(5)
 		}
 		//Proces D
-		goto czekaj;
+		printf("%d ", getpid());
+		sleep(5)
 
 	}
 	else if(pidB!=0){
@@ -23,7 +25,8 @@ int main(){
 		//Proces A & C
 		if(pidC!=0){
 			//Proces A
-			goto czekaj;
+			printf("%d ", getpid());
+			sleep(5);
 		}
 		//Proces C
 		pid_t pidF = fork();
@@ -32,11 +35,7 @@ int main(){
 			//Proces C
 			pid_t pidG = fork();
 		}
-		goto czekaj;
-
+		printf("%d ", getpid(();
+		sleep(5);
 	}
-
-czekaj:
-	printf("%d ", getpid());
-	sleep (5);
 }
